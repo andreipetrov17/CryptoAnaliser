@@ -1,4 +1,4 @@
-package ru.javarush.cryptoanaliser.petrov.app;
+package ru.javarush.cryptoanaliser.petrov.toplevel;
 
 import ru.javarush.cryptoanaliser.petrov.controller.MainController;
 

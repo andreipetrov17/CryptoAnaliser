@@ -1,6 +1,6 @@
 package ru.javarush.cryptoanaliser.petrov;
 
-import ru.javarush.cryptoanaliser.petrov.app.Application;
+import ru.javarush.cryptoanaliser.petrov.toplevel.Application;
 import ru.javarush.cryptoanaliser.petrov.controller.MainController;
 
 public class Runner {
