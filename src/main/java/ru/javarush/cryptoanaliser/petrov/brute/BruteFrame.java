@@ -1,4 +1,6 @@
-package ru.javarush.cryptoanaliser.petrov.bruteforce;
+package ru.javarush.cryptoanaliser.petrov.brute;
+import ru.javarush.cryptoanaliser.petrov.ceasar.WestPanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,6 +18,9 @@ import java.awt.*;
             setMinimumSize(new Dimension(600, 300));
             setResizable(true);
             setLayout(new BorderLayout());
+            setTitle("Шифр Цезаря шифровка/расшифровка");
+            westPanel = new WestPanel();
+            getContentPane().add(westPanel, BorderLayout.WEST);
             setVisible(true);
         }
         public static BruteFrame getInstance() {
