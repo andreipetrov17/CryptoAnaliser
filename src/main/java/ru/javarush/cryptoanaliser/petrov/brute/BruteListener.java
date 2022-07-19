@@ -11,7 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class BruteListener implements ActionListener {
-    private int key;
     private StringBuilder stringBuilder = new StringBuilder();
     private File inputFile;
     private File outputFile;
@@ -21,23 +20,27 @@ public class BruteListener implements ActionListener {
         switch (e.getActionCommand()) {
 
             case "OPEN" -> {
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaIn.selectAll();
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaIn.replaceSelection("");
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaOut.selectAll();
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaOut.replaceSelection("");
-                key = 0;
+                BruteFrame.getInstance().getCenterPanel().jTextAreaIn.selectAll();
+                BruteFrame.getInstance().getCenterPanel().jTextAreaIn.replaceSelection("");
+                BruteFrame.getInstance().getCenterPanel().jTextAreaOut.selectAll();
+                BruteFrame.getInstance().getCenterPanel().jTextAreaOut.replaceSelection("");
                 stringBuilder = null;
                 outputFile = null;
                 inputFile = null;
                 String str = openFile();
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaIn.setText(str);
-                CeasarFrame.getInstance().getCenterPanel().jTextAreaOut.setText(str);
                 stringBuilder = new StringBuilder(str);
+                BruteFrame.getInstance().getCenterPanel().jTextAreaIn.setText(str);
+                BruteFrame.getInstance().getCenterPanel().jTextAreaOut.setText(str);
             }
             case "CLEAR" -> clearAll();
             case "SAVE" -> saveFile();
             case "NEW_OUT_DIR" -> changeOutDir();
-            case "FIND" -> System.out.println(findKey(Alphabet.correctCharacters, "или", stringBuilder.toString()));
+            case "FIND" -> {
+                int i = findKey(Alphabet.correctCharacters, "или", stringBuilder.toString());
+                BruteFrame.getInstance().getSouthPanel().key.setText(i);
+
+
+            }
         }
     }
 
@@ -47,7 +50,7 @@ public class BruteListener implements ActionListener {
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         jFileChooser.setCurrentDirectory(new File("./src/main/resources"));
-        if (jFileChooser.showOpenDialog(CeasarFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
+        if (jFileChooser.showOpenDialog(BruteFrame.getInstance()) == JFileChooser.APPROVE_OPTION) {
             File file = jFileChooser.getSelectedFile();
             inputFile = file;
             String str;
