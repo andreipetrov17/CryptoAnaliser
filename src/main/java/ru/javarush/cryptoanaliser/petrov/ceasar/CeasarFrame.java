@@ -12,6 +12,7 @@ public class CeasarFrame extends JFrame {
     private static CeasarFrame instance;
 
     private CeasarFrame() {
+        setTitle("Шифровка и расшифровка методом цезаря");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
         setExtendedState(JFrame.MAXIMIZED_BOTH);
