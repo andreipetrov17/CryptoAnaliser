@@ -3,7 +3,6 @@ package ru.javarush.cryptoanaliser.petrov.ceasar;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-
 public class CenterPanel extends JPanel {
     public JTextArea jTextAreaIn;
     public JTextArea jTextAreaOut;
@@ -35,7 +34,7 @@ public class CenterPanel extends JPanel {
         gbc.fill = GridBagConstraints.RELATIVE;
         add(addFile, gbc);
 
-        JLabel pathInput = new JLabel("Текст не выбран");
+        JLabel pathInput = new JLabel("Обработанный файл сохраниться в той же директории с указанием ключа");
         gbc.gridx = 1;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
@@ -85,8 +84,8 @@ public class CenterPanel extends JPanel {
         gbc.anchor = GridBagConstraints.CENTER;
         add(outputFile, gbc);
 
-        JButton addFileToSave = new JButton("Изменить");
-        addFileToSave.setActionCommand("NEW_OUT_NAME");
+        JButton addFileToSave = new JButton("Сохранить...");
+        addFileToSave.setActionCommand("NEW_OUT_DIR");
         addFileToSave.addActionListener(actionListener);
         gbc.gridx = 0;
         gbc.gridy = 4;
@@ -97,7 +96,7 @@ public class CenterPanel extends JPanel {
         gbc.fill = GridBagConstraints.RELATIVE;
         add(addFileToSave, gbc);
 
-        JLabel pathOutput = new JLabel("[директория и имя исходного файла + К + Kлюч + N] или можно выбрать");
+        JLabel pathOutput = new JLabel("<= (сохранить файл в другой директории)");
         //WorkFrame.getInstance().pathOut = pathOutput;
         gbc.gridx = 1;
         gbc.gridy = 4;
@@ -110,7 +109,7 @@ public class CenterPanel extends JPanel {
         add(pathOutput, gbc);
 
         JButton saveOutputText = new JButton("Сохранить");
-        saveOutputText.setActionCommand("SAVE_RESULT");
+        saveOutputText.setActionCommand("SAVE");
         saveOutputText.addActionListener(actionListener);
         gbc.gridx = 2;
         gbc.gridy = 4;

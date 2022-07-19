@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class CeasarFrame extends JFrame {
-    private JPanel centerPanel;
+    private CenterPanel centerPanel ;
     private JPanel northPanel;
     private JPanel eastPanel;
     private JPanel southPanel;
@@ -29,10 +29,10 @@ public class CeasarFrame extends JFrame {
         if(instance == null) instance = new CeasarFrame();
         return instance;
     }
-    public JPanel getCenterPanel() {
+
+    public CenterPanel getCenterPanel(){
         return centerPanel;
     }
-
     public JPanel getNorthPanel() {
         return northPanel;
     }
