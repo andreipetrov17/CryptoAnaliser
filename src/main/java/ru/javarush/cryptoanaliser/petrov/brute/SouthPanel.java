@@ -6,7 +6,8 @@ import java.awt.*;
 public class SouthPanel extends JPanel {
     public JTextField jTextField;
     public JLabel key;
-    public  SouthPanel(){
+
+    public SouthPanel() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         JLabel jLabel = new JLabel("Слово, которое ищем: ");
@@ -21,7 +22,7 @@ public class SouthPanel extends JPanel {
         add(jLabel, gbc);
 
         jTextField = new JTextField();
-        jTextField.setPreferredSize(new Dimension(100,40));
+        jTextField.setPreferredSize(new Dimension(100, 40));
         jTextField.setFont(new Font("italic", 3, 14));
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -31,7 +32,7 @@ public class SouthPanel extends JPanel {
         gbc.weighty = 0.0f;
         gbc.fill = GridBagConstraints.WEST;
         gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(10,10,10,10);
+        gbc.insets = new Insets(10, 10, 10, 10);
         add(jTextField, gbc);
 
         JButton findBtn = new JButton("Искать совпадения");
@@ -45,7 +46,7 @@ public class SouthPanel extends JPanel {
         gbc.weighty = 0.0f;
         gbc.fill = GridBagConstraints.CENTER;
         gbc.anchor = GridBagConstraints.CENTER;
-        gbc.insets = new Insets(0,0,0,0);
+        gbc.insets = new Insets(0, 0, 0, 0);
         add(findBtn, gbc);
 
         key = new JLabel("Ключ:");
@@ -58,7 +59,7 @@ public class SouthPanel extends JPanel {
         gbc.weighty = 0.0f;
         gbc.fill = GridBagConstraints.CENTER;
         gbc.anchor = GridBagConstraints.CENTER;
-        gbc.insets = new Insets(0,0,0,0);
-        add(key,gbc);
+        gbc.insets = new Insets(0, 0, 0, 0);
+        add(key, gbc);
     }
 }

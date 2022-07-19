@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public  class CenterPanel extends  JPanel{
+public class CenterPanel extends JPanel {
 
-public JTextArea jTextAreaIn;
-public JTextArea jTextAreaOut;
+    public JTextArea jTextAreaIn;
+    public JTextArea jTextAreaOut;
 
-public CenterPanel(){
+    public CenterPanel() {
         ActionListener actionListener = BruteFrame.actionListener;
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -139,6 +139,6 @@ public CenterPanel(){
         JScrollPane jsp2 = new JScrollPane(jTextAreaOut);
         jsp2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(jsp2, gbc);
-        }
+    }
 }
 

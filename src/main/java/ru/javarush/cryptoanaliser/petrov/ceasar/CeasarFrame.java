@@ -5,13 +5,12 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class CeasarFrame extends JFrame {
-    private CenterPanel centerPanel ;
-    private JPanel northPanel;
-    private JPanel eastPanel;
-    private JPanel southPanel;
+    private CenterPanel centerPanel;
+
     private WestPanel westPanel;
     public static ActionListener actionListener = new CeasarListener();
     private static CeasarFrame instance;
+
     private CeasarFrame() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setMaximumSize(Toolkit.getDefaultToolkit().getScreenSize());
@@ -25,31 +24,20 @@ public class CeasarFrame extends JFrame {
         getContentPane().add(westPanel, BorderLayout.WEST);
         setVisible(true);
     }
+
     public static CeasarFrame getInstance() {
-        if(instance == null) instance = new CeasarFrame();
+        if (instance == null) instance = new CeasarFrame();
         return instance;
+        // TODO в каком-то методе этот вызов сделать или импорт статический
+
     }
 
-    public CenterPanel getCenterPanel(){
+    public CenterPanel getCenterPanel() {
         return centerPanel;
-    }
-    public JPanel getNorthPanel() {
-        return northPanel;
-    }
-
-    public JPanel getEastPanel() {
-        return eastPanel;
-    }
-
-    public JPanel getSouthPanel() {
-        return southPanel;
     }
 
     public WestPanel getWestPanel() {
         return westPanel;
     }
 
-    public ActionListener getActionListener() {
-        return actionListener;
-    }
 }
