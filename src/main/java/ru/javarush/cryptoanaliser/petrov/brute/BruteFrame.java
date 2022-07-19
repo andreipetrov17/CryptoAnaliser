@@ -5,11 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 
     public class BruteFrame extends JFrame {
-        private JPanel centerPanel;
+        private CenterPanel centerPanel;
         private JPanel northPanel;
         private JPanel eastPanel;
-        private JPanel southPanel;
+        private SouthPanel southPanel;
         private JPanel westPanel;
+        public static BruteListener actionListener = new BruteListener();
         private static BruteFrame instance;
         private BruteFrame() {
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,16 +19,18 @@ import java.awt.*;
             setMinimumSize(new Dimension(600, 300));
             setResizable(true);
             setLayout(new BorderLayout());
-            setTitle("Шифр Цезаря шифровка/расшифровка");
-            westPanel = new WestPanel();
-            getContentPane().add(westPanel, BorderLayout.WEST);
+            setTitle("Подбор ключа");
+            centerPanel = new CenterPanel();
+            getContentPane().add(centerPanel, BorderLayout.CENTER);
+            southPanel = new SouthPanel();
+            getContentPane().add(southPanel, BorderLayout.SOUTH);
             setVisible(true);
         }
         public static BruteFrame getInstance() {
             if(instance == null) instance = new BruteFrame();
             return instance;
         }
-        public JPanel getCenterPanel() {
+        public CenterPanel getCenterPanel() {
             return centerPanel;
         }
 
@@ -39,7 +42,7 @@ import java.awt.*;
             return eastPanel;
         }
 
-        public JPanel getSouthPanel() {
+        public SouthPanel getSouthPanel() {
             return southPanel;
         }
 

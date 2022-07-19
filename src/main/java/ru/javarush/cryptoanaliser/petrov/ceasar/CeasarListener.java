@@ -112,9 +112,10 @@ public class CeasarListener implements ActionListener {
             String lastName = inputFile.getName();
             lastName = lastName.substring(0,lastName.length() - 4);
             outputFile = new File(jFileChooser.getSelectedFile() + "/" + lastName);
+            System.out.println(outputFile + "key" + key + ".txt");
             try(FileWriter fw = new FileWriter(new File( outputFile + "key" + key + ".txt")))
             {
-                System.out.println(outputFile + "key" + key + ".txt");
+
                 fw.write(CeasarFrame.getInstance().getCenterPanel().jTextAreaOut.getText());
             }
             catch(IOException ex){
